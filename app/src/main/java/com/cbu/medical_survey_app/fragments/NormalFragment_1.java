@@ -49,9 +49,7 @@ public class NormalFragment_1 extends Fragment {
     };
 
 
-    public NormalFragment_1() {
 
-    }
 
     public NormalFragment_1(Context context) {
         bt1 = new ButtonListener(context);
@@ -84,8 +82,9 @@ public class NormalFragment_1 extends Fragment {
         editDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(getContext(),setDate,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-
+                DatePickerDialog dg = new DatePickerDialog(getContext(),setDate,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH));
+                dg.getDatePicker().setCalendarViewShown(false);
+                dg.show();
             }
         });
 

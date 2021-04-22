@@ -186,8 +186,9 @@ public class NormalData_1 {
             return false;
         }
         //사시는 지역 기간 미기입
-        if(pro5_ID==-1)
+        if(pro5_ID==-1) {
             return false;
+        }
         //살고있는 식구 미기입
         if(pro8_ID==-1)
             return false;
