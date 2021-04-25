@@ -127,7 +127,7 @@ public class FoodData_11 {
                 }
                 else{
                     ((RadioButton)vg.findViewById(getResId(vg,"food11_2_fir_radio"+(RowID+1)+"_"+(food11_sec[RowID]+1)))).setChecked(true);
-                    if(food11_sec[RowID]!=-1)
+                    if(food11_sec_once[RowID]!=-1)
                         ((RadioButton)vg.findViewById(getResId(vg,"food11_2_sec_radio_avg"+(RowID+1)+"_"+(food11_sec_once[RowID]+1)))).setChecked(true);
                 }
 

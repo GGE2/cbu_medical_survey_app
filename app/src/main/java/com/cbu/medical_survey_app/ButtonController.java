@@ -359,7 +359,8 @@ public void food7_prev(){
 
         if(StartActivity.dtc.saveData(nowContext)) {
             StartActivity.dtc.saveData(nowContext);
-            Fragment fragment = new NormalFragment_2(nowContext);
+            //Fragment fragment = new NormalFragment_2(nowContext);
+            Fragment fragment = new FoodFragment_7(nowContext);
             FragmentManager fm = ((FragmentActivity) nowContext).getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.survey_content, fragment);
