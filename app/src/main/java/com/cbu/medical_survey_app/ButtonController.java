@@ -17,6 +17,7 @@ import com.cbu.medical_survey_app.activities.StartActivity;
 import com.cbu.medical_survey_app.activities.PopupActivity;
 import com.cbu.medical_survey_app.fragments.FoodFragment_10;
 import com.cbu.medical_survey_app.fragments.FoodFragment_11;
+import com.cbu.medical_survey_app.fragments.FoodFragment_12;
 import com.cbu.medical_survey_app.fragments.FoodFragment_7;
 import com.cbu.medical_survey_app.fragments.FoodFragment_8;
 import com.cbu.medical_survey_app.fragments.FoodFragment_9;
@@ -30,6 +31,7 @@ import com.cbu.medical_survey_app.fragments.SleepFragment;
 import com.cbu.medical_survey_app.fragments.SmokeFragment;
 import com.cbu.medical_survey_app.fragments.FoodFragment_1;
 import com.cbu.medical_survey_app.fragments.WarningFragment;
+import com.cbu.medical_survey_app.fragments.WarningFragment2;
 
 public class ButtonController {
 
@@ -285,6 +287,51 @@ public void food7_prev(){
         }
 
     }
+    public void food11_prev(){
+        StartActivity.dtc.saveData(nowContext);
+        // 유효성 검사 통과
+
+        title.setText(R.string.food_title);
+        title_img.setImageResource(R.drawable.img_food_top);
+
+        makeFrag(new FoodFragment_10(nowContext));
+
+
+    }
+    public void food11_next(){
+        if(StartActivity.dtc.saveData(nowContext)){
+            FragmentManager fm = ((FragmentActivity)nowContext).getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+
+            fragmentTransaction.replace(R.id.survey_warning, new WarningFragment2(nowContext));      // 이후 지워줘야 함
+            fragmentTransaction.replace(R.id.survey_content, new FoodFragment_12(nowContext));
+
+            fragmentTransaction.commit();
+        }
+        else{
+            // 유효성 검사 실패 -> 경고창
+            openPopup();
+        }
+
+    }
+    public void food12_prev(){
+        StartActivity.dtc.saveData(nowContext);
+        // 유효성 검사 통과
+
+        title.setText(R.string.food_title);
+        title_img.setImageResource(R.drawable.img_food_top);
+
+        FragmentManager fm = ((FragmentActivity) nowContext).getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+
+        fragmentTransaction.replace(R.id.survey_warning, new Fragment());
+        fragmentTransaction.replace(R.id.survey_content, new FoodFragment_11(nowContext));
+
+        fragmentTransaction.commit();
+
+
+    }
+
 
     public void food1_Next() {
         // 음식1 -> 음식2

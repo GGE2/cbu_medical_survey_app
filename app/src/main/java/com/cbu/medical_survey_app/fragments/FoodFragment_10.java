@@ -54,7 +54,7 @@ public class FoodFragment_10 extends Fragment {
     private void initView(ViewGroup vg){
 
 
-        //닭고기, 생선류
+        //젓갈
         for(int RowID=0;RowID<9;RowID++){
             RadioButton[] rb1 = new RadioButton[9];
             RadioButton[] rb2 = new RadioButton[3];

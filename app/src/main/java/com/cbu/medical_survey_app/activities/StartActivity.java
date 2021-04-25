@@ -83,12 +83,13 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(StartActivity.this, SubActivity.class);
-                if(checkText()) {
-                    startActivity(intent);
-                }
-                else{
-                    openPopup();
-                }
+                startActivity(intent);
+//                if(checkText()) {
+//                    startActivity(intent);
+//                }
+//                else{
+//                    openPopup();
+//                }
 
 
 

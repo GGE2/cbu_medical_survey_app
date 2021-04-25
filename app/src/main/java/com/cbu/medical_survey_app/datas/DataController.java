@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.cbu.medical_survey_app.R;
 import com.cbu.medical_survey_app.fragments.FoodFragment_10;
+import com.cbu.medical_survey_app.fragments.FoodFragment_11;
+import com.cbu.medical_survey_app.fragments.FoodFragment_12;
 import com.cbu.medical_survey_app.fragments.FoodFragment_7;
 import com.cbu.medical_survey_app.fragments.FoodFragment_8;
 import com.cbu.medical_survey_app.fragments.FoodFragment_9;
@@ -50,6 +52,7 @@ public class DataController {
     final private FoodData_9 food_data9;
     final private FoodData_10 food_data10;
     final private FoodData_11 food_data11;
+    final private FoodData_12 food_data12;
 
     public DataController(String name, String address) {
         origin_name = name;
@@ -67,6 +70,7 @@ public class DataController {
         food_data9 = new FoodData_9();
         food_data10 = new FoodData_10();
         food_data11 = new FoodData_11();
+        food_data12 = new FoodData_12();
     }
 
     // survey_content에 연결된 프래그먼트에 따라 저장할 데이터 분기
@@ -133,8 +137,20 @@ public class DataController {
         else if(nowFragment instanceof FoodFragment_10){
             System.out.println("식품 사항10 Frag:");
             food_data10.saveData(context);
-            //return food_data9.check();
+            //return food_data10.check();
         }
+        else if(nowFragment instanceof FoodFragment_11){
+            System.out.println("식품 사항11 Frag:");
+            food_data11.saveData(context);
+            //return food_data11.check();
+        }
+        else if(nowFragment instanceof FoodFragment_12){
+            System.out.println("식품 사항12 Frag:");
+            food_data12.saveData(context);
+            //return food_data12.check();
+        }
+
+
 
 
 
@@ -209,6 +225,16 @@ public class DataController {
             }
             case R.id.food_frag_10:{
                 food_data10.setDataToView(vg);
+                break;
+
+            }
+            case R.id.food_frag_11:{
+                food_data11.setDataToView(vg);
+                break;
+
+            }
+            case R.id.food_frag_12:{
+                food_data12.setDataToView(vg);
                 break;
 
             }
